@@ -4,15 +4,13 @@ import { HiHeart } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
+  const date = new Date();
   return (
-    <div className="bg-[#222222] lg:p-12 p-4 py- lg:gap-5 gap-3 grid">
+    <div className="bg-[#222222] lg:py-6 p-4 lg:gap-4 gap-3 grid">
       <div className="text-sm lg:text-lg lg:text-center lg:justify-center grid lg:items-center">
         <p className="lg:text-center font-primary -ml-1 lg:ml-0">
-          @ 2024 Abrar Muthana R.
-        </p>
-        <p className="flex gap-1 lg:items-center lg:justify-center lg:text-center font-primary text-gray-400">
-          made with
-          <HiHeart size={20} className="text-primary" />
+          @ {date.getFullYear()}{" "}
+          <span className="text-primary"> Abrar Muthana R</span>.
         </p>
       </div>
       <div className="flex gap-4 text-gray-200 items-center lg:justify-center">

@@ -1,30 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BiDownload } from "react-icons/bi";
+import { BsTelephone, BsGithub } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 export default function First() {
-  const [showFirst, setShowFirst] = useState(true);
-  const texts = [
-    { id: 1, text: "Abrar Muthana Rakea" },
-    { id: 2, text: "Frontend Web Developer" },
-  ];
-
-  const SplitText = (text: string) =>
-    text
-      .split(" ")
-      .flatMap((word, index, array) =>
-        index < array.length - 1 ? [...word.split(""), " "] : word.split("")
-      );
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowFirst(false), 4000);
-    const returnTimer = setTimeout(() => setShowFirst(true), 10000);
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(returnTimer);
-    };
-  }, []);
-
   return (
     <div
       id="/"
@@ -35,64 +15,46 @@ export default function First() {
       </h2>
       <div className="font-main font-primary text-primary overflow-hidden">
         <AnimatePresence mode="wait">
-          {showFirst ? (
-            <motion.p
-              key={texts[0].id}
-              initial={{ y: "-200px" }}
-              animate={{ y: 0 }}
-              className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
-            >
-              {SplitText(texts[0].text).map((item, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ y: "-200px" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "200px" }}
-                  transition={{ duration: 0.7, delay: i / 10.5 }}
-                >
-                  {item === " " ? "\u00A0" : item}
-                </motion.span>
-              ))}
-            </motion.p>
-          ) : (
-            <motion.p
-              key={texts[1].id}
-              initial={{ y: "-200px" }}
-              animate={{ y: 0 }}
-              exit={{ y: "200px" }}
-              className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
-            >
-              {SplitText(texts[1].text).map((item, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ y: "-200px" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "200px" }}
-                  transition={{ duration: 0.7, delay: i / 10.5 }}
-                >
-                  {item === " " ? "\u00A0" : item}
-                </motion.span>
-              ))}
-            </motion.p>
-          )}
+          <motion.p
+            initial={{ y: "-200px" }}
+            animate={{ y: 0 }}
+            className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
+            viewport={{ once: true }}
+          >
+            Abrar Muthana Rakea
+          </motion.p>
+          <motion.p
+            initial={{ y: "-200px" }}
+            animate={{ y: 0 }}
+            exit={{ y: "200px" }}
+            className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
+          >
+            Frontend Web Developer
+          </motion.p>
         </AnimatePresence>
       </div>
 
-      <div className="flex gap-2 mt-4 lg:text-lg">
-        <a
-          href="mailto:abraralrawi997@gmail.com"
-          className="border hover:bg-opacity-75 text-[16px] hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none"
-        >
-          Let&#39;s talk
-        </a>
-
-        <a
-          href="/files/resume.pdf"
-          download="Abrar Muthana Resume"
-          className="border flex items-center gap-1 text-[16px] hover:bg-opacity-75 hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none"
-        >
-          Resume <BiDownload />
-        </a>
+      <div className="grid gap-2 mt-4 lg:text-lg">
+        <div className="flex gap-4 text-gray-200 items-center lg:justify-center">
+          <a
+            href="mailto:abraralrawi997@gmail.com"
+            className="border rounded-full p-1 hover:border-primary"
+          >
+            <MdEmail size={18} />
+          </a>
+          <a
+            href={`https://api.whatsapp.com/send?phone=9647831190254`}
+            className="border rounded-full p-1 hover:border-primary"
+          >
+            <BsTelephone size={16} />
+          </a>
+          <a
+            href="https://github.com/abrar997"
+            className="border rounded-full p-1 hover:border-primary"
+          >
+            <BsGithub size={18} />
+          </a>
+        </div>
       </div>
     </div>
   );

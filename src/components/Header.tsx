@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { GiButterflyFlower } from "react-icons/gi";
-import { BiMenu } from "react-icons/bi";
+import { BiDownload, BiMenu } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 
 type HeaderProps = {
-  menu: { id: number; title: string; to: string }[];
+  menu: {
+    id: number;
+    title: string;
+    to: string;
+    className?: string;
+    download?: string;
+  }[];
 };
 
 export default function Header({ menu }: HeaderProps) {
@@ -31,17 +37,20 @@ export default function Header({ menu }: HeaderProps) {
     <motion.div
       className={`font-primary  border-[#8080804e] ${
         isFixed
-          ? "fixed top-0 inset-x-0 bg-[#222222] border-b z-50 translate-y-0 transition-all duration-300"
-          : ""
+          ? "fixed top-0 inset-x-0 bg-[#222222] border-b z-50 transition-all duration-300"
+          : "border-b"
       }`}
     >
       <div
         className={`font-secondary  text-main lg:px-12 ${
-          isFixed ? "lg:py-4" : "lg:py-6"
+          isFixed ? "lg:py-5" : "lg:py-4"
         }  p-4 pb-1 flex justify-between items-center`}
       >
         <Link
-          to="/"
+          to="first"
+          duration={300}
+          smooth={true}
+          spy={true}
           className="flex text-2xl lg:text-4xl items-start cursor-pointer"
         >
           A
@@ -53,7 +62,6 @@ export default function Header({ menu }: HeaderProps) {
               <Link
                 to={item.to}
                 duration={300}
-                translate="yes"
                 smooth={true}
                 spy={true}
                 offset={-150}
@@ -82,18 +90,28 @@ export default function Header({ menu }: HeaderProps) {
           >
             {menu.map((item) => (
               <div key={item.id}>
-                <Link
-                  to={item.to}
-                  duration={300}
-                  translate="yes"
-                  smooth={true}
-                  spy={true}
-                  offset={-130}
-                  onClick={() => setIsOpen(false)}
-                  className="capitalize tracking-wide cursor-pointer p-1 nav-item"
-                >
-                  {item.title}
-                </Link>
+                {item.download ? (
+                  <a
+                    href={item.to}
+                    download={item.download}
+                    className={item.className}
+                  >
+                    {item.title} <BiDownload className="inline-block ml-1" />
+                  </a>
+                ) : (
+                  <Link
+                    to={item.to}
+                    duration={300}
+                    translate="yes"
+                    smooth={true}
+                    spy={true}
+                    offset={-130}
+                    onClick={() => setIsOpen(false)}
+                    className="capitalize tracking-wide cursor-pointer p-1 nav-item"
+                  >
+                    {item.title}
+                  </Link>
+                )}
               </div>
             ))}
           </motion.div>
