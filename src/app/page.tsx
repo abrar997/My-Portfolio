@@ -17,13 +17,14 @@ export default function Home() {
           backgroundImage: "url('/assets/bg.png')",
           backgroundSize: "6px",
         }}
-        className="lg:p-12 grid lg:gap-20 gap-10 p-4"
+        className="lg:p-12 grid lg:gap-10 gap-10 p-4"
       >
         <First />
         <Skills
           frontend={DataComponents.skillsData.frontend}
           tools={DataComponents.skillsData.tools}
           language={DataComponents.skillsData.language}
+          cicd={DataComponents.skillsData.cicd}
         />
         <Experience data={DataComponents.experienceData} />
         <Projects data={DataComponents.projects} />

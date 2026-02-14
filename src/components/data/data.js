@@ -1,49 +1,75 @@
 const DataComponents = {
   menu: [
-    { id: 1, title: "home", to: "/" },
-    { id: 3, title: "skills", to: "skills" },
-    { id: 4, title: "experience", to: "experience" },
-    { id: 5, title: "projects", to: "projects" },
-    { id: 6, title: "contact us", to: "contact" },
+    { id: 1, title: "home", to: "/", isDownload: false },
+    { id: 2, title: "skills", to: "skills", isDownload: false },
     {
-      id: 7,
+      id: 3,
+      title: "experience",
+      to: "experience",
+      isDownload: false,
+    },
+    {
+      id: 4,
+      title: "projects",
+      to: "projects",
+      isDownload: false,
+    },
+    {
+      id: 5,
+      title: "contact us",
+      to: "contact",
+      isDownload: false,
+    },
+    {
+      id: 6,
+      title: "resume",
       to: "/files/resume.pdf",
       download: "Abrar Muthana Resume",
+      isDownload: true,
       className:
-        "border flex items-center gap-1 text-[16px] hover:bg-opacity-75 hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none",
-      title: "Resume",
+        "border flex items-center gap-1 text-[16px] hover:bg-primary text-text  border-primary rounded px-3 py-1 ",
     },
   ],
   skillsData: {
-    frontend: [
-      { id: 1, name: "HTML,HTML5" },
-      { id: 13, name: "CSS,CSS3" },
-      { id: 14, name: "Java script" },
-      { id: 15, name: "Typescript" },
-      { id: 16, name: "React JS" },
-      { id: 2, name: "Next JS" },
-      { id: 3, name: "Context API" },
-      { id: 4, name: "Redux" },
-      { id: 5, name: "Redux Toolkit" },
-      { id: 6, name: "Tailwind css" },
-      { id: 7, name: "Bootstrap" },
-      { id: 8, name: "Framer motion" },
-      { id: 9, name: "Headless UI" },
-      { id: 10, name: "Swiper JS" },
-      { id: 11, name: "React Hook Form" },
-      { id: 12, name: "clsx" },
-    ],
-    language: [
-      { id: 1, name: "Java script" },
-      { id: 2, name: "Typescript" },
-    ],
-    tools: [
+    frontend: {
+      languages: [
+        { id: 1, name: "HTML,HTML5" },
+        { id: 13, name: "CSS,CSS3" },
+        { id: 14, name: "Java script" },
+        { id: 15, name: "Typescript" },
+      ],
+      styling: [
+        { id: 6, name: "Tailwind css" },
+        { id: 7, name: "Bootstrap 4,5" },
+      ],
+      framework: [
+        { id: 16, name: "React JS" },
+        { id: 2, name: "Next JS" },
+      ],
+      api: [
+        { id: 3, name: "Context API" },
+        { id: 4, name: "Redux" },
+        { id: 5, name: "Redux Toolkit" },
+      ],
+      library: [
+        { id: 11, name: "React Hook Form" },
+        { id: 8, name: "Framer motion" },
+        { id: 9, name: "Headless UI" },
+        { id: 10, name: "Swiper JS" },
+        { id: 12, name: "clsx" },
+      ],
+    },
+
+    cicd: [
       { id: 1, name: "Github" },
       { id: 2, name: "Bitbucket" },
       { id: 3, name: "Jira" },
       { id: 4, name: "Netlify" },
       { id: 5, name: "Vercel" },
-      { id: 6, name: "Figma" },
+    ],
+    tools: [
+      { id: 1, name: "Figma" },
+      { id: 6, name: "Canva" },
     ],
   },
   experienceData: [
@@ -140,14 +166,7 @@ const DataComponents = {
       github: "https://github.com/abrar997/furniture-ecom.git",
       demo: "https://abrar997.github.io/furniture-ecom/register.html",
     },
-    {
-      id: 3,
-      title: "Todo App",
-      url: "./assets/crud.png",
-      skillsUsed: "HTML , CSS , JS",
-      github: "https://github.com/abrar997/crud",
-      demo: "https://crud-delta-tawny.vercel.app/",
-    },
+
     {
       id: 4,
       title: "Weather App",

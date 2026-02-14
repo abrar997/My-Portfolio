@@ -15,7 +15,10 @@ interface ProjectsData {
 
 export default function Projects(props: ProjectsData) {
   return (
-    <div id="projects" className="grid gap-3 lg:gap-12">
+    <div
+      id="projects"
+      className="grid gap-3 lg:gap-12 lg:bg-[#2a2929d9] lg:p-12"
+    >
       <Title subtitle="welcome in my gallery" title="Projects" isGallery />
       <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-6 gap-4 lg:px-4">
         {props.data.map((item, i) => (
@@ -38,7 +41,7 @@ export default function Projects(props: ProjectsData) {
               <a
                 href={item.demo}
                 target="_blank"
-                className="bg-primary hover:bg-opacity-80 rounded px-4 py-1 flex items-center"
+                className="bg-pink-600 text-white hover:bg-opacity-80 rounded px-4 py-1 flex items-center"
               >
                 Demo
               </a>
@@ -46,7 +49,7 @@ export default function Projects(props: ProjectsData) {
                 <a
                   href={item.github}
                   target="_blank"
-                  className="bg-teal-500 hover:bg-opacity-80 rounded px-4 py-1"
+                  className="bg-teal-600 text-white hover:bg-opacity-80 rounded px-4 py-1"
                 >
                   Github
                 </a>

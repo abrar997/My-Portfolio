@@ -12,6 +12,7 @@ type HeaderProps = {
     to: string;
     className?: string;
     download?: string;
+    isDownload?: boolean;
   }[];
 };
 
@@ -21,7 +22,7 @@ export default function Header({ menu }: HeaderProps) {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 100) {
+    if (offset > 120) {
       setISFixed(true);
     } else {
       setISFixed(false);
@@ -35,16 +36,17 @@ export default function Header({ menu }: HeaderProps) {
 
   return (
     <motion.div
-      className={`font-primary  border-[#8080804e] ${
-        isFixed
-          ? "fixed top-0 inset-x-0 bg-[#222222] border-b z-50 transition-all duration-300"
-          : "border-b"
-      }`}
+      animate={{
+        height: isFixed ? 80 : 72,
+        backgroundColor: isFixed ? "#222222" : "#2a2929d9",
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className={`font-primary border-[#8080804e] ${isFixed ? "fixed inset-x-0 border-b z-50" : "border-b"}`}
     >
       <div
-        className={`font-secondary  text-main lg:px-12 ${
+        className={`font-secondary text-main lg:px-16 p-4 pb-1 flex justify-between items-center h-full ${
           isFixed ? "lg:py-5" : "lg:py-4"
-        }  p-4 pb-1 flex justify-between items-center`}
+        }`}
       >
         <Link
           to="first"
@@ -57,20 +59,41 @@ export default function Header({ menu }: HeaderProps) {
           <GiButterflyFlower className="text-primary lg:text-3xl lg:-ml-0.5" />
         </Link>
         <div className="lg:flex gap-3 hidden lg:text-lg">
-          {menu.map((item) => (
-            <div key={item.id}>
-              <Link
-                to={item.to}
-                duration={300}
-                smooth={true}
-                spy={true}
-                offset={-150}
-                className="capitalize tracking-wide cursor-pointer p-1.5 nav-item"
-              >
-                {item.title}
-              </Link>
-            </div>
-          ))}
+          {menu.map((item) => {
+            if (item.isDownload === false) {
+              return (
+                <Link
+                  key={item.id}
+                  to={item.to}
+                  duration={300}
+                  translate="yes"
+                  smooth={true}
+                  spy={true}
+                  offset={-130}
+                  onClick={() => setIsOpen(false)}
+                  className="capitalize tracking-wide cursor-pointer p-1 nav-item"
+                >
+                  {item.title}
+                </Link>
+              );
+            } else {
+              return (
+                <a
+                  key={item.id}
+                  href={item.to}
+                  download={item.download}
+                  className={`${item.className} capitalize hover:text-white`}
+                >
+                  <span>{item.title}</span>
+                  {item.title === "resume" && (
+                    <span>
+                      <BiDownload className="inline-block ml-1" />
+                    </span>
+                  )}
+                </a>
+              );
+            }
+          })}
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -86,33 +109,21 @@ export default function Header({ menu }: HeaderProps) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 200, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="grid gap-3 lg:hidden lg:text-lg px-2 items-center justify-center text-center pb-4"
+            className="grid gap-4 lg:hidden lg:text-lg px-2 items-center justify-center text-center pb-4"
           >
             {menu.map((item) => (
-              <div key={item.id}>
-                {item.download ? (
-                  <a
-                    href={item.to}
-                    download={item.download}
-                    className={item.className}
-                  >
-                    {item.title} <BiDownload className="inline-block ml-1" />
-                  </a>
-                ) : (
-                  <Link
-                    to={item.to}
-                    duration={300}
-                    translate="yes"
-                    smooth={true}
-                    spy={true}
-                    offset={-130}
-                    onClick={() => setIsOpen(false)}
-                    className="capitalize tracking-wide cursor-pointer p-1 nav-item"
-                  >
-                    {item.title}
-                  </Link>
-                )}
-              </div>
+              <Link
+                to={item.to}
+                duration={300}
+                translate="yes"
+                smooth={true}
+                spy={true}
+                offset={-130}
+                onClick={() => setIsOpen(false)}
+                className="capitalize tracking-wide cursor-pointer p-1 nav-item px-4"
+              >
+                {item.title}
+              </Link>
             ))}
           </motion.div>
         )}

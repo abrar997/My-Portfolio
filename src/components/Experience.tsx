@@ -19,7 +19,10 @@ interface ExperienceData {
 
 export default function Experience(props: ExperienceData) {
   return (
-    <div id="experience" className="grid gap-3 lg:gap-12">
+    <div
+      id="experience"
+      className="grid gap-3 lg:gap-12 lg:bg-[#2a2929d9] lg:p-12"
+    >
       <Title subtitle="my journey as a frontend developer" title="Experience" />
       <div className="grid lg:grid-cols-3 lg:items-start gap-4 lg:gap-6 lg:px-4 overflow-hidden">
         {props.data.map((item, i) => (
@@ -61,7 +64,7 @@ export default function Experience(props: ExperienceData) {
             {item.link && (
               <a href={item.link} className="flex items-center gap-1 text-main">
                 <BsLink className="text-primary" /> Link :
-                <span className="text-teal-500 hover:opacity-80">
+                <span className="text-teal-600 hover:opacity-80">
                   {item.for}
                 </span>
               </a>

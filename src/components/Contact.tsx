@@ -37,7 +37,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
         message,
       });
       setIsSend(true);
-      toast("We will contact you within 48 hours", { 
+      toast("We will contact you within 48 hours", {
         className: "bg-transparent",
       });
     } catch (error) {
@@ -56,7 +56,10 @@ export default function Contact({ ContactDataProps }: ContactProps) {
   }, [isSend]);
 
   return (
-    <div id="contact" className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
+    <div
+      id="contact"
+      className="grid gap-3 lg:gap-12 lg:pb-16 pb-6 lg:bg-[#2a2929d9] lg:p-12"
+    >
       <Title subtitle="send me a message" title="Contact us" />
       <div className="grid lg:grid-cols-2 lg:gap-12 gap-3">
         <div className="grid lg:gap-8 gap-4 lg:py-16">
@@ -117,7 +120,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
         </div>
         <form
           onSubmit={onSubmit}
-          className="border lg:p-4 px-2 py-4 bg-main flex flex-col gap-5 shadow rounded border-gray-500"
+          className="border lg:p-4 px-2 py-4 flex flex-col gap-5 shadow rounded border-gray-500"
         >
           <div className="grid w-full">
             <label htmlFor={name}>Name</label>
@@ -167,7 +170,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
               className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
             />
           </div>
-          <button className="bg-teal-500 text-black hover:border border border-slate-600 gap-1 col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center">
+          <button className="bg-teal-600 text-white  hover:border border border-slate-600 gap-1 col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center">
             send
             <span>
               <GiButterflyFlower className="lg:text-xl" />
