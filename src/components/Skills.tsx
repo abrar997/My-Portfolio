@@ -73,9 +73,10 @@ export default function Skills({ frontend, tools, cicd }: SkillsProps) {
     >
       <Title subtitle="what skills i have" title="Skills" />
       <div className="grid lg:grid-cols-4 gap-4 lg:gap-8 lg:items-start overflow-hidden text-text">
-        {skillSections.map((section) => (
+        {skillSections.map((section, idx) => (
           <div
             className={`${section.id === "frontend" ? "lg:col-span-2" : "col-span-1"} `}
+            key={idx}
           >
             <TitleSkill icon={section.icon} text={section.title} />
 
