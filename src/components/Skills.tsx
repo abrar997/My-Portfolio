@@ -40,7 +40,7 @@ export default function Skills({ frontend, tools, cicd }: SkillsProps) {
       title: "Frontend Development",
       icon: <CgWebsite className="text-primary text-sm lg:text-lg" />,
       groups: [
-        { title: "Languages", items: frontend.languages },
+        { title: "Programming Languages", items: frontend.languages },
         { title: "Styling", items: frontend.styling },
         { title: "Framework", items: frontend.framework },
         { title: "State & API", items: frontend.api },
@@ -69,7 +69,7 @@ export default function Skills({ frontend, tools, cicd }: SkillsProps) {
   return (
     <div
       id="skills"
-      className="lg:bg-[#2a2929d9] lg:mx-2 grid gap-3 lg:gap-12 rounded lg:shadow-lg lg:py-12 lg:px-12 overflow-hidden"
+      className="bg-[#2a2929d9]  grid gap-3 lg:gap-12 rounded lg:shadow-lg lg:py-12 lg:px-12 overflow-hidden p-4 py-6"
     >
       <Title subtitle="what skills i have" title="Skills" />
       <div className="grid lg:grid-cols-4 gap-4 lg:gap-8 lg:items-start overflow-hidden text-text">

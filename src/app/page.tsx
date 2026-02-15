@@ -10,20 +10,19 @@ import DataComponents from "../components/data/data";
 
 export default function Home() {
   return (
-    <div className="bg-main text-main font-sans">
+    <div
+      className="bg-main text-main font-sans lg:pt-6"
+      style={{
+        backgroundSize: "6px",
+        backgroundImage: "url('/assets/bg.png')",
+      }}
+    >
       <Header menu={DataComponents.menu} />
-      <div
-        style={{
-          backgroundImage: "url('/assets/bg.png')",
-          backgroundSize: "6px",
-        }}
-        className="lg:p-12 grid lg:gap-10 gap-10 p-4"
-      >
+      <div className="lg:px-12 lg:pt-6 grid lg:gap-10 gap-6 p-2">
         <First />
         <Skills
           frontend={DataComponents.skillsData.frontend}
           tools={DataComponents.skillsData.tools}
-          language={DataComponents.skillsData.language}
           cicd={DataComponents.skillsData.cicd}
         />
         <Experience data={DataComponents.experienceData} />

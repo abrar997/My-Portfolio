@@ -20,15 +20,6 @@ const DataComponents = {
       to: "contact",
       isDownload: false,
     },
-    {
-      id: 6,
-      title: "resume",
-      to: "/files/resume.pdf",
-      download: "Abrar Muthana Resume",
-      isDownload: true,
-      className:
-        "border flex items-center gap-1 text-[16px] hover:bg-primary text-text  border-primary rounded px-3 py-1 ",
-    },
   ],
   skillsData: {
     frontend: {
@@ -56,7 +47,7 @@ const DataComponents = {
         { id: 8, name: "Framer motion" },
         { id: 9, name: "Headless UI" },
         { id: 10, name: "Swiper JS" },
-        { id: 12, name: "clsx" },
+        { id: 12, name: "Babylon js" },
       ],
     },
 

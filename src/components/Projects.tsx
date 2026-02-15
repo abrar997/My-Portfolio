@@ -17,7 +17,7 @@ export default function Projects(props: ProjectsData) {
   return (
     <div
       id="projects"
-      className="grid gap-3 lg:gap-12 lg:bg-[#2a2929d9] lg:p-12"
+      className="grid gap-3 lg:gap-12 bg-[#2a2929d9] lg:p-12 p-4 py-6"
     >
       <Title subtitle="welcome in my gallery" title="Projects" isGallery />
       <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-6 gap-4 lg:px-4">

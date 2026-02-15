@@ -21,7 +21,7 @@ export default function Experience(props: ExperienceData) {
   return (
     <div
       id="experience"
-      className="grid gap-3 lg:gap-12 lg:bg-[#2a2929d9] lg:p-12"
+      className="grid gap-3 lg:gap-12 bg-[#2a2929d9] lg:p-12 p-4 py-6"
     >
       <Title subtitle="my journey as a frontend developer" title="Experience" />
       <div className="grid lg:grid-cols-3 lg:items-start gap-4 lg:gap-6 lg:px-4 overflow-hidden">

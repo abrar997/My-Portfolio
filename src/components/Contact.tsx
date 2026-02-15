@@ -58,7 +58,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
   return (
     <div
       id="contact"
-      className="grid gap-3 lg:gap-12 lg:pb-16 pb-6 lg:bg-[#2a2929d9] lg:p-12"
+      className="grid gap-3 lg:gap-12 lg:pb-16 p-4 py-6 bg-[#2a2929d9] lg:p-12"
     >
       <Title subtitle="send me a message" title="Contact us" />
       <div className="grid lg:grid-cols-2 lg:gap-12 gap-3">
@@ -171,7 +171,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
             />
           </div>
           <button className="bg-teal-600 text-white  hover:border border border-slate-600 gap-1 col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center">
-            send
+            Send
             <span>
               <GiButterflyFlower className="lg:text-xl" />
             </span>
