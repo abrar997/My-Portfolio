@@ -81,15 +81,15 @@ export default function Skills({ frontend, tools, cicd }: SkillsProps) {
 
             {section.id === "frontend" ? (
               <div className="grid gap-3 col-span-2 w-full border rounded-tl-none py-3 px-3 lg:min-h-[230px] border-t-0 rounded-xl border-teal-500">
-                {(section as any).groups.map((group: any) => (
-                  <div key={group.title}>
+                {(section as any).groups.map((group: any, idx: any) => (
+                  <div key={idx}>
                     <h3 className="text-sm font-semibold text-teal-400 mb-1">
                       {group.title}
                     </h3>
 
                     <ul className="grid grid-cols-2 lg:grid-cols-2 gap-x-3 gap-y-1 text-slate-300">
-                      {group.items.map((item: any) => (
-                        <li key={item.id} className="flex items-center gap-1">
+                      {group.items.map((item: any, idx: any) => (
+                        <li key={idx} className="flex items-center gap-1">
                           <BsDot className="text-teal-600" />
                           {item.name}
                         </li>

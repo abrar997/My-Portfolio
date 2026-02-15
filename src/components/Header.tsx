@@ -101,8 +101,9 @@ export default function Header({ menu }: HeaderProps) {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="grid gap-4 lg:hidden lg:text-lg px-2 items-center justify-center text-center pb-8 bg-main"
           >
-            {menu.map((item) => (
+            {menu.map((item, idx) => (
               <Link
+                key={idx}
                 to={item.to}
                 duration={300}
                 translate="yes"
