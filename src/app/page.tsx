@@ -11,7 +11,7 @@ import DataComponents from "../components/data/data";
 export default function Home() {
   return (
     <div
-      className="bg-main text-main font-sans lg:pt-3"
+      className="bg-main text-main font-sans lg:pt-3 overflow-hidden"
       style={{
         backgroundSize: "6px",
         backgroundImage: "url('/assets/bg.png')",
