@@ -224,6 +224,12 @@ const DataComponents = {
         url: "https://github.com/abrar997",
         text: "Abrar Muthana",
       },
+      {
+        id: 4,
+        title: "behance",
+        url: "https://www.behance.net/abraralrawi",
+        text: "Abrar Muthana",
+      },
     ],
     inputs: [
       {

@@ -65,20 +65,20 @@ export default function Contact({ ContactDataProps }: ContactProps) {
         <div className="grid lg:gap-8 gap-4 lg:py-16">
           <h1 className="text-text flex gap-3">
             <span className="hidden lg:flex">
-              <GiButterflyFlower className="lg:text-5xl text-primary" />
+              <GiButterflyFlower className="lg:text-5xl text-teal-500" />
             </span>
             Thank you for visiting my portfolio! If you have any questions,
-            project inquiries, or just want to say hello, feel free to reach
-            out.I&#39;m always open to discussing new projects, creative ideas,
-            or opportunities to be part of your vision.
+            project inquiries , or just want to say hello , feel free to reach
+            out . I&#39;m always open to discussing new projects, creative
+            ideas, or opportunities to be part of your vision .
           </h1>
           <div className="flex gap-3">
             <span className="hidden lg:flex">
-              <GiButterflyFlower className="lg:text-5xl text-primary" />
+              <GiButterflyFlower className="lg:text-5xl text-teal-500" />
             </span>
-            <ul className="flex flex-col gap-2 text-sm">
+            <div className="flex flex-col gap-2 tracking-wide">
               {ContactDataProps.social.map((item) => (
-                <li key={item.id} className="grid">
+                <div key={item.id} className="grid">
                   {item.title === "email" && (
                     <a
                       href={`mailto:${item.url}`}
@@ -87,7 +87,9 @@ export default function Contact({ ContactDataProps }: ContactProps) {
                     >
                       <span className="text-text capitalize">{item.title}</span>
                       <span>:</span>
-                      <span>{item.text}</span>
+                      <span className="text-pink-300 hover:text-teal-300">
+                        {item.text}
+                      </span>
                     </a>
                   )}
                   {item.title === "phone" && (
@@ -98,7 +100,9 @@ export default function Contact({ ContactDataProps }: ContactProps) {
                     >
                       <span className="text-text capitalize">{item.title}</span>
                       <span>:</span>
-                      <span>{item.text}</span>
+                      <span className="text-pink-300 hover:text-teal-300">
+                        {item.text}
+                      </span>
                     </a>
                   )}
 
@@ -110,12 +114,31 @@ export default function Contact({ ContactDataProps }: ContactProps) {
                     >
                       <span className="text-text capitalize">{item.title}</span>
                       <span>:</span>
-                      <span>{item.text}</span>
+                      <span className="text-pink-300 hover:text-teal-300">
+                        {item.text}
+                      </span>
                     </a>
                   )}
-                </li>
+                  {item.title === "behance" && (
+                    <a
+                      href={`${item.url}`}
+                      target="_blank"
+                      className="flex gap-1"
+                    >
+                      <span className="text-text capitalize">{item.title}</span>
+                      <span>:</span>
+                      <span className="text-pink-300 hover:text-teal-300">
+                        {item.text}
+                      </span>
+                    </a>
+                  )}
+                </div>
               ))}
-            </ul>
+              <p>
+                {" "}
+                <span className="text-text capitalize "> Location :</span> Iraq
+              </p>
+            </div>
           </div>
         </div>
         <form
