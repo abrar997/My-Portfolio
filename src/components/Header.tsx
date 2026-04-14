@@ -23,10 +23,9 @@ export default function Header({ menu }: HeaderProps) {
     <motion.div
       animate={{
         height: isFixed ? 80 : 72,
-        backgroundColor: "#222222",
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`font-primary border-[#8080804e] ${isFixed ? "fixed inset-x-0 border-b z-50 " : "border-b"} lg:mx-12`}
+      className={`font-primary border-[#8080804e] ${isFixed ? "fixed inset-x-0 border-b z-50 " : "border-b"} lg:mx-12 bg-[#222222]`}
     >
       <div
         className={`font-secondary text-main lg:px-10 p-4 pb-1 flex justify-between items-center h-full ${
