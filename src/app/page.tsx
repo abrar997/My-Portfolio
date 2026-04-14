@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import DataComponents from "../components/data/data";
+import { DataComponents } from "../../public/data/data";
 
 export default function Home() {
   return (
@@ -29,6 +29,7 @@ export default function Home() {
         <Projects data={DataComponents.projects} />
         <Contact ContactDataProps={DataComponents.contact} />
       </div>
+
       <Footer />
     </div>
   );

@@ -61,6 +61,7 @@ export default function Experience(props: ExperienceData) {
                 ))}
               </div>
             </div>
+
             {item.link && (
               <a href={item.link} className="flex items-center gap-1 text-main">
                 <BsLink className="text-primary" /> Link :

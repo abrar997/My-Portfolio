@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "./reusable/Title";
 import { BsDot } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";

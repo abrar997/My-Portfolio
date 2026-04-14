@@ -1,6 +1,5 @@
-import React from "react";
-import { GiButterflyFlower } from "react-icons/gi";
 import { motion } from "framer-motion";
+import Icon from "./Icon";
 
 interface TextProps {
   subtitle?: string;
@@ -18,14 +17,16 @@ export default function Title({ title, subtitle, isGallery }: TextProps) {
     >
       <h1 className="lg:text-4xl text-3xl flex text-primary font-semibold font-primary gap-1 lg:justify-center">
         {title}
-        <GiButterflyFlower className="lg:text-xl lg:-ml-0.5" />
+        <Icon size="lg:text-xl" />
       </h1>
       <h3 className="text-text text-sm">{subtitle} .</h3>
       {isGallery && (
         <p className="text-gray-500 lg:text-sm text-[10px]">
-      <span className='text-primary'>!!</span>  If Babylon.js is among the libraries used in project, it means the project needs a few extra seconds to load.The result is worth your wait :)
+          <span className="text-primary">!!</span> If Babylon.js is among the
+          libraries used in project, it means the project needs a few extra
+          seconds to load.The result is worth your wait :)
         </p>
-      )}  
+      )}
     </motion.div>
   );
-} 
+}

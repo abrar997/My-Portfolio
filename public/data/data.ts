@@ -1,4 +1,7 @@
-const DataComponents = {
+import { BsBehance, BsGithub, BsTelephone } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+
+export const DataComponents = {
   menu: [
     { id: 1, title: "home", to: "/", isDownload: false },
     { id: 2, title: "skills", to: "skills", isDownload: false },
@@ -133,7 +136,23 @@ const DataComponents = {
   ],
   projects: [
     {
-      id: 1,
+      title: "E-learning Platform",
+      subtitle: "working with team",
+      url: "./assets/courses.png",
+      skillsUsed:
+        "React 19 + Vite , React Router DOM , React Query (TanStack Query) , Axios , Tailwind CSS , React Hook Form + Zod , Recharts , Framer Motion , ESLint",
+      demo: "https://learn-app-five-eta.vercel.app/",
+    },
+    {
+      title: "khadamatak",
+      subtitle: "working with team",
+      url: "./assets/khadamat.png",
+      skillsUsed:
+        "React 19 + Vite, Axios , Tailwind CSS , lucid Charts , framer-motion ... etc",
+      demo: "https://khadamatak-gamma.vercel.app/",
+      github: "https://github.com/NorhanGamalY/khadamatak",
+    },
+    {
       title: "Accommodation Network",
       url: "./assets/tech.png",
       skillsUsed:
@@ -141,7 +160,6 @@ const DataComponents = {
       demo: "https://www.accommodation.network/",
     },
     {
-      id: 2,
       title: "E-commerce",
       url: "./assets/ecom1.png",
       skillsUsed:
@@ -150,16 +168,6 @@ const DataComponents = {
       demo: "https://ecom-4.vercel.app/",
     },
     {
-      id: 2,
-      title: "Furniture E-commerce",
-      url: "./assets/furniture.png",
-      skillsUsed: "HTML , CSS , JS , Tailwind css",
-      github: "https://github.com/abrar997/furniture-ecom.git",
-      demo: "https://abrar997.github.io/furniture-ecom/register.html",
-    },
-
-    {
-      id: 4,
       title: "Weather App",
       url: "./assets/weather.png",
       skillsUsed: "React js , Tailwind css , react-icons ",
@@ -167,33 +175,6 @@ const DataComponents = {
       demo: "https://abrar997.github.io/weather-task/",
     },
     {
-      id: 4,
-      title: "3D Portfolio",
-      url: "./assets/port.png",
-      skillsUsed: "Next js , babylon js , tailwind css , typescript",
-      github: "https://github.com/abrar997/3d-first",
-      demo: "https://3d-first.vercel.app/",
-    },
-    {
-      id: 5,
-      title: "FA nursery",
-      url: "./assets/FA.png",
-      skillsUsed:
-        "Next js , Babylon js , tailwind css , Typescript , Framer-motion",
-      github: "https://github.com/abrar997/3d-project2",
-      demo: "https://3d-project2.vercel.app/",
-    },
-    {
-      id: 6,
-      title: "Template Ecommerce for shopping",
-      url: "./assets/ecom.png",
-      skillsUsed: "HTML , CSS , JS , tailwind css , Swiper js",
-      github: "https://github.com/abrar997/ecommerce-js",
-      demo: "https://ecommerce-js-vt44.vercel.app/",
-    },
-
-    {
-      id: 7,
       title: "Crud system management",
       url: "./assets/crud2.png",
       skillsUsed: "React Js , Tailwind css , react icons",
@@ -201,60 +182,62 @@ const DataComponents = {
       demo: "https://crud-system-managment.vercel.app/",
     },
     {
-      id: 8,
-      title: "Portfolio",
-      url: "./assets/port2.png",
-      skillsUsed: "React js , css , tailwind css , framer-motion , ",
-      github: "https://github.com/abrar997/test",
-      demo: "https://test-abrar997.vercel.app/",
+      title: "3D Portfolio",
+      url: "./assets/port.png",
+      skillsUsed: "Next js , babylon js , tailwind css , typescript",
+      github: "https://github.com/abrar997/3d-first",
+      demo: "https://3d-first.vercel.app/",
     },
   ],
-  contact: {
-    social: [
-      {
-        id: 1,
-        title: "email",
-        url: "abraralrawi997@gmail.com",
-        text: "abraralrawi997@gmail.com",
-      },
-      { id: 2, title: "phone", url: "9647831190254", text: "+9647831190254" },
-      {
-        id: 3,
-        title: "github",
-        url: "https://github.com/abrar997",
-        text: "Abrar Muthana",
-      },
-      {
-        id: 4,
-        title: "behance",
-        url: "https://www.behance.net/abraralrawi",
-        text: "Abrar Muthana",
-      },
-    ],
-    inputs: [
-      {
-        id: 1,
-        label: "name",
-        placeholder: "Muthana",
-        type: "text",
-        for: "name",
-      },
-      {
-        id: 2,
-        label: "email",
-        placeholder: "abraralrawi997@gmail.com",
-        type: "email",
-        for: "email",
-      },
-      {
-        id: 3,
-        label: "message",
-        placeholder: "Hello Abrar '-' , ",
-        type: "textarea",
-        for: "message",
-      },
-    ],
-  },
 };
 
-export default DataComponents;
+export const SocialData = [
+  {
+    id: 1,
+    title: "email",
+    url: "abraralrawi997@gmail.com",
+    text: "abraralrawi997@gmail.com",
+    icon: MdEmail,
+  },
+  {
+    id: 2,
+    title: "phone",
+    url: "9647831190254",
+    text: "+9647831190254",
+    icon: BsTelephone,
+  },
+  {
+    id: 3,
+    title: "github",
+    url: "https://github.com/abrar997",
+    text: "Abrar Muthana",
+    icon: BsGithub,
+  },
+  {
+    id: 4,
+    title: "behance",
+    url: "https://www.behance.net/abraralrawi",
+    text: "Abrar Muthana",
+    icon: BsBehance,
+  },
+];
+export const formInputs = [
+  { type: "text", placeholder: "your name", key: "name", label: "Name" },
+  {
+    type: "email",
+    placeholder: "example@gmail.com",
+    key: "email",
+    label: "Email",
+  },
+  {
+    type: "text",
+    placeholder: "+9647831190",
+    key: "phone",
+    label: "Phone Number",
+  },
+  {
+    key: "message",
+    placeholder: "hello Abrar '_' ",
+    label: "Your message ",
+  },
+];

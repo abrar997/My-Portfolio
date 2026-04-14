@@ -1,5 +1,5 @@
-import { BsTelephone, BsGithub } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
+import { SocialData } from "../../public/data/data";
+import ContactSocial from "./reusable/ContactSocial";
 
 export default function First() {
   return (
@@ -19,27 +19,8 @@ export default function First() {
         </p>
       </div>
 
-      <div className="grid gap-2 mt-4 lg:text-lg">
-        <div className="flex gap-4 text-gray-200 items-center lg:justify-center">
-          <a
-            href="mailto:abraralrawi997@gmail.com"
-            className="border rounded-full lg:p-2 p-1.5 bg-main hover:border-primary"
-          >
-            <MdEmail size={18} />
-          </a>
-          <a
-            href={`https://api.whatsapp.com/send?phone=9647831190254`}
-            className="border rounded-full lg:p-2 p-1.5 bg-main hover:border-primary"
-          >
-            <BsTelephone size={16} />
-          </a>
-          <a
-            href="https://github.com/abrar997"
-            className="border rounded-full lg:p-2 p-1.5 bg-main hover:border-primary"
-          >
-            <BsGithub size={18} />
-          </a>
-        </div>
+      <div className="mt-4">
+        <ContactSocial social={SocialData} isIcon />
       </div>
     </div>
   );
