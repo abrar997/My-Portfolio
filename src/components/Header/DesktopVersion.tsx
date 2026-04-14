@@ -1,6 +1,7 @@
 import { BiDownload } from "react-icons/bi";
 import { Link } from "react-scroll";
 import Icon from "../reusable/Icon";
+import { useEffect, useState } from "react";
 
 const DesktopVersion = ({
   menu,
@@ -27,7 +28,6 @@ const DesktopVersion = ({
             key={item.id}
             to={item.to}
             duration={300}
-            translate="yes"
             smooth={true}
             spy={true}
             offset={-130}

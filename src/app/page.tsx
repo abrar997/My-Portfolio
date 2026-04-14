@@ -4,11 +4,20 @@ import Experience from "@/components/Experience";
 import First from "@/components/First";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Projects from "@/components/Projects";
+import Projects from "@/components/Project/Projects";
 import Skills from "@/components/Skills";
 import { DataComponents } from "../../public/data/data";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return <p className="opacity-0">Loading</p>;
+
   return (
     <div
       className="bg-main text-main font-sans lg:pt-3 overflow-hidden"
@@ -27,7 +36,7 @@ export default function Home() {
         />
         <Experience data={DataComponents.experienceData} />
         <Projects data={DataComponents.projects} />
-        <Contact ContactDataProps={DataComponents.contact} />
+        <Contact />
       </div>
 
       <Footer />
