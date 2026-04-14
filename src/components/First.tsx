@@ -5,7 +5,7 @@ export default function First() {
   return (
     <div
       id="/"
-      className="flex bg-[#2a2929d9] flex-col lg:items-center lg:text-center lg:gap-4 gap-1 justify-center text-main lg:h-[450px] lg:py-0 p-4 py-6 mt-4 lg:mt-0"
+      className="flex bg-[#2a2929d9] flex-col items-start lg:items-center lg:text-center lg:gap-4 gap-1 justify-center text-main lg:h-[450px] lg:py-0 p-4 py-6 mt-4 lg:mt-0"
     >
       <h2 className="lg:text-2xl text-[16px] font-main font-primary lg:opacity-90 opacity-80">
         Hello I&#39;m ,
