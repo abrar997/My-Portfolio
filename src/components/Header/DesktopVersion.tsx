@@ -1,7 +1,6 @@
 import { BiDownload } from "react-icons/bi";
 import { Link } from "react-scroll";
 import Icon from "../reusable/Icon";
-import { useEffect, useState } from "react";
 
 const DesktopVersion = ({
   menu,
